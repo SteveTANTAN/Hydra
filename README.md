@@ -1,2 +1,2 @@
 # Hydra
-Hrdra offical website
+Hydra official website
