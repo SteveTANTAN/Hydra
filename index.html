@@ -14,12 +14,12 @@
 <!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Official Website [EMNLP25]Hydra: Structured Cross-Source Enhanced Large Language Model Reasoning">
-    <meta name="keywords" content="EMNLP25, Hydra, LLM">
+    <meta name="description" content="Official Website [EMNLP25]HydraRAG: Structured Cross-Source Enhanced Large Language Model Reasoning">
+    <meta name="keywords" content="EMNLP25, HydraRAG, LLM">
 
     <link rel="canonical" href="https://stevetantan.github.io/Hydra/">
     
-    <title>Hydra: Structured Cross-Source Enhanced Large Language Model Reasoning</title>
+    <title>HydraRAG: Structured Cross-Source Enhanced Large Language Model Reasoning</title>
     <!-- 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Inter 字体 -->
@@ -192,7 +192,7 @@
                 <!-- 主标题旁边的logo图片 -->
                 <img src="img/hydra-logo-purple-1024.png" alt="Hydra Logo" class="w-16 h-16 text-brand-theme" onerror="this.src='https://placehold.co/100x100/1e293b/d1d5db?text=Logo';">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-md">
-                    <span class="text-brand-theme">Hydra:</span> Structured Cross-Source Enhanced Large Language Model Reasoning
+                    <span class="text-brand-theme">HydraRAG:</span> Structured Cross-Source Enhanced Large Language Model Reasoning
                 </h1>
             </div>
             <!-- <div class="mt-8 space-y-2 text-xl md:text-2xl font-medium text-muted-theme drop-shadow-sm">
@@ -277,7 +277,7 @@
         <section id="abstract" class="section-panel p-6 md:p-10 mt-8 rounded-2xl transition-all duration-300">
             <h2 class="text-2xl md:text-3xl font-bold mb-4 text-brand-theme relative pb-2">Abstract</h2>
             <p class="text-base md:text-lg text-muted-theme leading-relaxed">
-                Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating external knowledge. Current hybrid RAG systems retrieve evidence from <span class="font-semibold text-text-theme">both knowledge graphs (KGs)</span> and <span class="font-semibold text-text-theme">text documents</span> to support LLM reasoning. However, they face challenges including <span class="font-semibold text-text-theme">multi-hop reasoning</span>, <span class="font-semibold text-text-theme">multi-entity questions</span>, <span class="font-semibold text-text-theme">multi-source verification</span>, and <span class="font-semibold text-text-theme">effective graph utilisation</span>. Hydra is a <span class="font-semibold text-text-theme">training-free framework</span> that unifies <span class="font-semibold text-text-theme">graph topology</span>, <span class="font-semibold text-text-theme">document semantics</span>, and <span class="font-semibold text-text-theme">source reliability</span> to support deep, faithful reasoning. An agent explores structured and unstructured sources, increasing both diversity and precision of evidence, and applies <span class="font-semibold text-text-theme">tri-factor verification</span> (trustworthiness, corroboration, entity-path alignment) to reduce noise and improve faithfulness.
+                Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating external knowledge. Current hybrid RAG systems retrieve evidence from <span class="font-semibold text-text-theme">both knowledge graphs (KGs)</span> and <span class="font-semibold text-text-theme">text documents</span> to support LLM reasoning. However, they face challenges including <span class="font-semibold text-text-theme">multi-hop reasoning</span>, <span class="font-semibold text-text-theme">multi-entity questions</span>, <span class="font-semibold text-text-theme">multi-source verification</span>, and <span class="font-semibold text-text-theme">effective graph utilisation</span>. HydraRAG is a <span class="font-semibold text-text-theme">training-free framework</span> that unifies <span class="font-semibold text-text-theme">graph topology</span>, <span class="font-semibold text-text-theme">document semantics</span>, and <span class="font-semibold text-text-theme">source reliability</span> to support deep, faithful reasoning. An agent explores structured and unstructured sources, increasing both diversity and precision of evidence, and applies <span class="font-semibold text-text-theme">tri-factor verification</span> (trustworthiness, corroboration, entity-path alignment) to reduce noise and improve faithfulness.
             </p>
             <div class="mt-4 flex flex-wrap gap-2 text-sm">
                 <span class="px-3 py-1 rounded-full bg-code-theme text-muted-theme">KG + text</span>
@@ -286,8 +286,8 @@
                 <span class="px-3 py-1 rounded-full bg-code-theme text-muted-theme">Training-free</span>
             </div>
             <div class="mt-8">
-                <img src="img/intro.png" alt="Hydra overview: agent explores KG + text and applies tri-factor verification." class="w-full h-auto rounded-lg shadow-xl" onerror="this.src='https://placehold.co/1200x600/1e293b/d1d5db?text=Image+Not+Found';">
-                <span class="block mt-2 text-center text-xs text-muted-theme">Figure 1: Four LLM reasoning paradigms and Hydra's cross-source workflow.</span>
+                <img src="img/intro.png" alt="HydraRAG overview: agent explores KG + text and applies tri-factor verification." class="w-full h-auto rounded-lg shadow-xl" onerror="this.src='https://placehold.co/1200x600/1e293b/d1d5db?text=Image+Not+Found';">
+                <span class="block mt-2 text-center text-xs text-muted-theme">Figure 1: Four LLM reasoning paradigms and HydraRAG's cross-source workflow.</span>
             </div>
         </section>
         
@@ -295,7 +295,7 @@
         <section id="method" class="section-panel p-6 md:p-10 mt-8 rounded-2xl transition-all duration-300">
             <h2 class="text-2xl md:text-3xl font-bold mb-4 text-brand-theme relative pb-2">Method</h2>
             <p class="text-muted-theme leading-relaxed">
-                <strong class="text-text-theme">Overview.</strong> Hydra constructs an <em>evidence graph</em> while answering a question. It queries both KG and text, expands along promising relations, applies reliability checks, and keeps verified paths for the final answer.
+                <strong class="text-text-theme">Overview.</strong> HydraRAG constructs an <em>evidence graph</em> while answering a question. It queries both KG and text, expands along promising relations, applies reliability checks, and keeps verified paths for the final answer.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 <div class="p-4 md:p-6 rounded-lg section-panel">
@@ -316,7 +316,7 @@
                 </div>
             </div>
             <div class="mt-8">
-                <img src="img/overall.png" alt="Hydra pipeline: initialisation → exploration → pruning → answering" class="w-full h-auto rounded-lg shadow-xl" onerror="this.src='https://placehold.co/1200x600/1e293b/d1d5db?text=Image+Not+Found';">
+                <img src="img/overall.png" alt="HydraRAG pipeline: initialisation → exploration → pruning → answering" class="w-full h-auto rounded-lg shadow-xl" onerror="this.src='https://placehold.co/1200x600/1e293b/d1d5db?text=Image+Not+Found';">
                 <span class="block mt-2 text-center text-xs text-muted-theme">Figure 2: System pipeline with the four stages used in our implementation.</span>
             </div>
             <div class="mt-8">
@@ -329,7 +329,7 @@
         <section id="results" class="section-panel p-6 md:p-10 mt-8 rounded-2xl transition-all duration-300">
             <h2 class="text-2xl md:text-3xl font-bold mb-4 text-brand-theme relative pb-2">Benchmarks and summary</h2>
             <p class="text-muted-theme leading-relaxed">
-                Hydra reports strong results across seven benchmarks, including <span class="font-semibold text-text-theme">CWQ</span>, <span class="font-semibold text-text-theme">AdvHotpotQA</span>, <span class="font-semibold text-text-theme">QALD10-en</span>, <span class="font-semibold text-text-theme">SimpleQA</span>, <span class="font-semibold text-text-theme">WebQSP</span>, <span class="font-semibold text-text-theme">WebQuestions</span>, and <span class="font-semibold text-text-theme">Zero-shot RE</span>. With GPT-3.5 it improves over a strong hybrid baseline and allows smaller models such as Llama-3.1-8B to approach GPT-4-Turbo on these tasks.
+                HydraRAG reports strong results across seven benchmarks, including <span class="font-semibold text-text-theme">CWQ</span>, <span class="font-semibold text-text-theme">AdvHotpotQA</span>, <span class="font-semibold text-text-theme">QALD10-en</span>, <span class="font-semibold text-text-theme">SimpleQA</span>, <span class="font-semibold text-text-theme">WebQSP</span>, <span class="font-semibold text-text-theme">WebQuestions</span>, and <span class="font-semibold text-text-theme">Zero-shot RE</span>. With GPT-3.5 it improves over a strong hybrid baseline and allows smaller models such as Llama-3.1-8B to approach GPT-4-Turbo on these tasks.
             </p>
             <div class="mt-8 flex flex-wrap justify-center gap-4">
                 <!-- 更新后的 Read the paper link -->
@@ -360,7 +360,7 @@
         <section id="install" class="section-panel p-6 md:p-10 mt-8 rounded-2xl transition-all duration-300">
             <h2 class="text-2xl md:text-3xl font-bold mb-4 text-brand-theme relative pb-2">Install and run</h2>
             <p class="text-muted-theme leading-relaxed">
-                Hydra relies on Freebase and Wikidata services for the KG side. Please follow the setup guides in the repository and put your API keys where indicated.
+                HydraRAG relies on Freebase and Wikidata services for the KG side. Please follow the setup guides in the repository and put your API keys where indicated.
             </p>
             <pre class="rounded-lg p-4 bg-code-theme overflow-x-auto"><code># 1) Clone and create environment
 git clone https://github.com/SteveTANTAN/HydraRAG.git
@@ -393,7 +393,7 @@ python hydra_main.py webqsp --no-web --depth 3
                 <!-- 更新后的 Code link -->
                 <a href="https://github.com/SteveTANTAN/HydraRAG" target="_blank" rel="noopener" class="block p-5 rounded-lg section-panel hover:bg-opacity-80 transition-colors duration-300">
                     <h3 class="font-semibold text-lg text-text-theme mb-1">💻 Code</h3>
-                    <p class="text-sm text-muted-theme">Runner, configs, and utilities for Hydra/Hydra‑E.</p>
+                    <p class="text-sm text-muted-theme">Runner, configs, and utilities for HydraRAG/HydraRAG‑E.</p>
                 </a>
                 <a href="#install" class="block p-5 rounded-lg section-panel hover:bg-opacity-80 transition-colors duration-300">
                     <h3 class="font-semibold text-lg text-text-theme mb-1">🧪 Repro tips</h3>
@@ -406,7 +406,7 @@ python hydra_main.py webqsp --no-web --depth 3
         <section id="bibtex" class="section-panel p-6 md:p-10 mt-8 rounded-2xl transition-all duration-300">
             <h2 class="text-2xl md:text-3xl font-bold mb-4 text-brand-theme relative pb-2">BibTeX</h2>
             <pre id="bib" class="rounded-lg p-4 bg-code-theme overflow-x-auto"><code>@misc{tan2025hydra,
-    title={Hydra: Structured Cross-Source Enhanced Large Language Model Reasoning}, 
+    title={HydraRAG: Structured Cross-Source Enhanced Large Language Model Reasoning}, 
     author={Xingyu Tan and Xiaoyang Wang and Qing Liu and Xiwei Xu and Xin Yuan and Liming Zhu and Wenjie Zhang},
     year={2025},
     eprint={2505.17464},
@@ -424,7 +424,7 @@ python hydra_main.py webqsp --no-web --depth 3
 
     <!-- 页脚 -->
     <footer class="text-muted-theme py-12 mt-12 text-center transition-colors duration-300">
-        <p>&copy; 2025 Hydra authors. All rights reserved.</p>
+        <p>&copy; 2025 HydraRAG authors. All rights reserved.</p>
     </footer>
 
     <script>
