@@ -30,7 +30,7 @@
   </a>
 </p>
 
-# Hydra: Structured Cross-Source Enhanced LLM Reasoning Official Website (EMNLP2025, Main Conference)  
+# HydraRAG: Structured Cross-Source Enhanced LLM Reasoning Official Website (EMNLP2025, Main Conference)  
 
 
 ## News!
@@ -40,7 +40,7 @@ Our paper has been accepted for publication at EMNLP 2025 Main Conference!
 If you are interested or inspired by this work, you can cite us by:
 ```sh
 @misc{tan2025hydra,
-      title={Hydra: Structured Cross-Source Enhanced Large Language Model Reasoning}, 
+      title={HydraRAG: Structured Cross-Source Enhanced Large Language Model Reasoning}, 
       author={Xingyu Tan and Xiaoyang Wang and Qing Liu and Xiwei Xu and Xin Yuan and Liming Zhu and Wenjie Zhang},
       year={2025},
       eprint={2505.17464},
